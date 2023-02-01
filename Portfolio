@@ -1,0 +1,89 @@
+What did I expect to learn? Personal Presentation
+
+Upon moving to Barcelona to undertake the Erasmus+ programme, my main educational aim was to immerse myself in new modules, 
+especially ones that covered the type of content I usually would not study at home. 
+Being a Biochemistry student myself, I was pleasantly surprised when I found out I could study the Current Topics of Bioinformatics – 
+a course that comprised of a dynamic informatic teaching of such topics from genome sequencing to Machine Learning to Programming. 
+Obviously, this was only an introductory class, yet my main expectations were based in learning and managing such compelling programs 
+such as Python or RStudio, ones we continuously hear people talking about, 
+especially in a point in time where the proliferation of AI tools has reached a colossal magnitude.
+
+
+
+Summary of an attended conference
+
+After attending the 1st TAB conference, where Clara Inserte discussed innovative techniques for proper clonal evolution visualization, 
+this topic became way more clearer.
+
+Clara kicked off her presentation by telling us a bit of her personal study experience, 
+where after graduating from UAB, she joined a laboratory in Germany. 
+She worked in PopHumanVar, which essentially integrates functional data from databases, 
+such as the Genome Project and then applies it into an interactive tour to genome visualization. 
+Within the program there are multiple plots where we can visualize loads of data differently.
+
+A brief biological explanation on Clonal Evolution was given to us, which describes the evolution of a tumour – 
+if a mutation occurs in certain genes also known as the driver genes it has consequences, as the cell then escapes its usual cell cycle. 
+It then transforms itself, further expanding into a tumour. 
+Within the tumour all cells are the same (have the same genetic material) aka clones. 
+Nonetheless, microscopic advances within oncology have shown that in fact, tumours are heterogeneous – 
+we don’t know how this intratumor heterogeneity (ITH) is achieved yet. 
+Clonal evolution studies how, within tumours, homogeneity evolves into heterogeneity. 
+Its main challenge remains correct and regular time/checkpoint samples.
+Models can be Linear, where the x axis represents time and the y axis measures clonal prevalence -
+yet within this designation they can be punctuated. 
+In the latter case, further mutations occurred at an early point in time and some were more prevalent than others
+Models can also adopt a branching parallel evolution, other mutations occur, which causes divergent events within the cell, introducing ITH.
+
+The 3 fundamental steps of clonal evolution reconstruction are clustering, reconstructing, and visualizing (the clonal evolution events).
+
+Clonal evolution reconstruction starts with Clustering – where we resolve the ITH obtained after sample sequencing and variants annotation. 
+Then, CCF (Cancer Cell Fractions) is calculated, variants are clustered throughout the graph according to their clone prevalence.
+Then we can reconstruct the clonal evolution – it is a simple step that revolves around establishing the connection between mutations, 
+their evolution and divergent levels.
+
+Before Clara and her team`s work, there had been 2 visualisation approaches established: Fishplot and Timescape. 
+They each have their own characteristics, as well as their advantages and disadvantages. 
+The former is better for prevalence of clones, as we can visualize the representation of branched clonal evolution, 
+yet worse for whenever there are not as many timepoints, since the latter shows time (on the x axis) in a continuous way. 
+The default mode of the Timescape approach assumes an equidistant time development of the clones.
+
+The tool developed by Clara and her team is mainly inspired by Fishplot – 
+since the relative clonal prevalence offered to us by timescape visualization method is not enough. 
+Also, the effect of therapy, like certain anti-tumor drugs – which account for the formation of a fish-like graph, 
+cannot be visualized unless it is measured, as it is in a fishplot.
+
+And the team`s main goals were to overcome the current visualization shortcomings and developing a basic, 
+detailed and allele-level plots, whilst designing an interactive interface underlying everything previously mentioned.
+
+How does the clevR-vis pipeline work? The inputs are the CCFs tables, whose information is essentialy the timepoints of each clone.
+When submitting them, a validity check occurs, to ensure the correct ratios, and parental relations (where does each mutation come from)
+seaObject is generated, where extra timepoints can be added, to confer validity and certainty to the data, as well as the therapy estimation.
+Finally, input visualisation can be in three different plots: Shark, Dolphin or Plaice (same as dolphin, yet in an allele-level representation).
+
+During the conference, Clara exemplified running a model CCF Table through the clevR-vis pipeline. 
+After submitting our input and establishing the parental relationships, Clara used seaObject to insert more timepoints 
+(either measured, estimated or custom.
+
+The first plot shown was the Shark plot – yet this one does not give us any ideas regarding time, 
+only the evolution of the parental relationships via a colour-coded legend. 
+By adding an extended version of this plot, we obtain a point sized relative CCF scheme, which gives a further idea on parental relationships.
+
+The dolphin plot was also explored, as well as the Plaice plot – the shape of them can either be spline or polygon. 
+The bottom half of the latter plot is shown in black and white, as it represents the percentage of healthy alleles (50%). 
+When the bottom part is colorful as well (even if only some parts) we are facing a bi-allelic event, 
+in which no healthy allele copies have remained.
+Annotations can also be added to the plots, for us to properly identify, within the plot, which gene is missing.
+Clonal therapy can also be visualized within these plots, allowing us to witness the change of tumor size.
+
+To sum up, clevR-vis combines the both previously explored fishplot and timescape approaches, 
+with some cutting-edge additional features, making it easy and simple to do certain tasks such as novel allele-aware visualization, 
+by being able to identify bi-allelic events briefly. 
+We can also approximate the tumor`s development between measured or customised timepoints 
+
+
+
+What did I learn
+
+
+
+
